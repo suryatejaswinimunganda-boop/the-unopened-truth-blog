@@ -1,0 +1,449 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #111;
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* Common Screen */
+
+.screen {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* Start Screen */
+
+#startScreen {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.7),
+            rgba(0,0,0,0.7)
+        ),
+        url("https://picsum.photos/1600/900?random=20");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+#startScreen h1 {
+    font-size: 55px;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 3px;
+}
+
+
+#startScreen p {
+    font-size: 20px;
+
+    margin: 10px;
+}
+
+
+/* Buttons */
+
+button {
+    background-color: #8b0000;
+
+    color: white;
+
+    border: 2px solid #ff4444;
+
+    padding: 12px 25px;
+
+    margin: 10px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #cc0000;
+
+    transform: scale(1.05);
+}
+
+
+/* Game Screen */
+
+#gameScreen {
+    display: block;
+
+    padding: 0;
+
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle,
+            #333,
+            #111
+        );
+}
+
+
+/* Header */
+
+header {
+    background-color: #080808;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 2px solid #8b0000;
+}
+
+
+header h1 {
+    font-size: 25px;
+}
+
+
+.game-info {
+    font-size: 20px;
+
+    color: #ff5555;
+}
+
+
+#timer {
+    font-weight: bold;
+}
+
+
+/* Room */
+
+.room {
+    position: relative;
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    height: 550px;
+
+    margin: 30px auto;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3a3a3a,
+            #181818
+        );
+
+    border: 5px solid #555;
+
+    box-shadow:
+        0 0 30px black;
+
+    overflow: hidden;
+}
+
+
+/* Objects */
+
+.object {
+    position: absolute;
+
+    font-size: 55px;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.object span {
+    display: block;
+
+    font-size: 14px;
+
+    color: white;
+
+    margin-top: 5px;
+}
+
+
+.object:hover {
+    transform: scale(1.15);
+
+    filter: brightness(1.5);
+}
+
+
+/* Clock */
+
+.clock {
+    top: 50px;
+
+    left: 15%;
+}
+
+
+/* Painting */
+
+.painting {
+    top: 40px;
+
+    right: 15%;
+}
+
+
+/* Books */
+
+.books {
+    bottom: 60px;
+
+    left: 12%;
+}
+
+
+/* Drawer */
+
+.drawer {
+    bottom: 80px;
+
+    left: 45%;
+}
+
+
+/* Door */
+
+.door {
+    bottom: 30px;
+
+    right: 10%;
+}
+
+
+/* Message */
+
+.message {
+    width: 80%;
+
+    max-width: 700px;
+
+    margin: 10px auto;
+
+    padding: 15px;
+
+    background-color: #222;
+
+    border: 1px solid #555;
+
+    border-radius: 5px;
+
+    text-align: center;
+
+    min-height: 50px;
+}
+
+
+/* Hint */
+
+.hint-button {
+    display: block;
+
+    margin: 20px auto;
+}
+
+
+/* Puzzle */
+
+.puzzle {
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.8);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.puzzle-box {
+    background-color: #222;
+
+    border: 2px solid #ff4444;
+
+    padding: 40px;
+
+    width: 90%;
+
+    max-width: 450px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 30px black;
+}
+
+
+.puzzle-box h2 {
+    margin-bottom: 20px;
+}
+
+
+.puzzle-box input {
+    padding: 12px;
+
+    width: 200px;
+
+    text-align: center;
+
+    font-size: 20px;
+
+    background-color: #111;
+
+    color: white;
+
+    border: 1px solid #777;
+
+    border-radius: 5px;
+}
+
+
+#codeMessage {
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+
+/* Win Screen */
+
+#winScreen {
+    background:
+        linear-gradient(
+            rgba(0,0,0,0.6),
+            rgba(0,0,0,0.6)
+        ),
+        url("https://picsum.photos/1600/900?random=50");
+
+    background-size: cover;
+}
+
+
+#winScreen h1 {
+    font-size: 60px;
+
+    color: #00ff88;
+
+    margin-bottom: 20px;
+}
+
+
+/* Game Over */
+
+#gameOverScreen {
+    background-color: #250000;
+}
+
+
+#gameOverScreen h1 {
+    font-size: 55px;
+
+    color: #ff3333;
+
+    margin-bottom: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    #startScreen h1 {
+        font-size: 35px;
+    }
+
+
+    header {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .room {
+        height: 450px;
+    }
+
+
+    .object {
+        font-size: 40px;
+    }
+
+
+    .clock {
+        left: 10%;
+    }
+
+
+    .painting {
+        right: 10%;
+    }
+
+
+    .drawer {
+        left: 40%;
+    }
+
+
+    .door {
+        right: 5%;
+    }
+
+}

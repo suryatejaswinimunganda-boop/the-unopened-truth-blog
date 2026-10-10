@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Escape Room</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- START SCREEN -->
+    <div id="startScreen" class="screen">
+
+        <h1>🔐 ESCAPE ROOM</h1>
+
+        <p>You are trapped inside a mysterious room.</p>
+
+        <p>Find the clues, solve the puzzle and escape!</p>
+
+        <button onclick="startGame()">START GAME</button>
+
+    </div>
+
+
+    <!-- GAME SCREEN -->
+    <div id="gameScreen" class="screen hidden">
+
+        <header>
+
+            <h1>🔐 THE MYSTERY ROOM</h1>
+
+            <div class="game-info">
+                ⏱️ Time:
+                <span id="timer">05:00</span>
+            </div>
+
+        </header>
+
+
+        <main class="room">
+
+            <!-- CLOCK -->
+            <div class="object clock"
+                 onclick="showClue('clock')">
+
+                ⏰
+                <span>Clock</span>
+
+            </div>
+
+
+            <!-- PAINTING -->
+            <div class="object painting"
+                 onclick="showClue('painting')">
+
+                🖼️
+                <span>Painting</span>
+
+            </div>
+
+
+            <!-- BOOKS -->
+            <div class="object books"
+                 onclick="showClue('books')">
+
+                📚
+                <span>Bookshelf</span>
+
+            </div>
+
+
+            <!-- DRAWER -->
+            <div class="object drawer"
+                 onclick="openDrawer()">
+
+                🗄️
+                <span>Locked Drawer</span>
+
+            </div>
+
+
+            <!-- DOOR -->
+            <div class="object door"
+                 onclick="tryDoor()">
+
+                🚪
+                <span>Exit Door</span>
+
+            </div>
+
+        </main>
+
+
+        <!-- MESSAGE AREA -->
+        <div id="message" class="message">
+
+            Click objects around the room to search for clues.
+
+        </div>
+
+
+        <!-- HINT -->
+        <button class="hint-button"
+                onclick="showHint()">
+
+            💡 HINT
+
+        </button>
+
+
+        <!-- DRAWER PUZZLE -->
+        <div id="puzzle" class="puzzle hidden">
+
+            <div class="puzzle-box">
+
+                <h2>🔒 Locked Drawer</h2>
+
+                <p>Enter the 3-digit code:</p>
+
+                <input
+                    type="number"
+                    id="codeInput"
+                    placeholder="Enter code"
+                >
+
+                <br><br>
+
+                <button onclick="checkCode()">
+                    UNLOCK
+                </button>
+
+                <button onclick="closePuzzle()">
+                    CLOSE
+                </button>
+
+                <p id="codeMessage"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- WIN SCREEN -->
+    <div id="winScreen" class="screen hidden">
+
+        <h1>🎉 YOU ESCAPED!</h1>
+
+        <p>Congratulations!</p>
+
+        <p>You solved the mystery and escaped the room.</p>
+
+        <h2>🔑 The door is open!</h2>
+
+        <button onclick="location.reload()">
+            PLAY AGAIN
+        </button>
+
+    </div>
+
+
+    <!-- GAME OVER -->
+    <div id="gameOverScreen" class="screen hidden">
+
+        <h1>⏰ TIME'S UP!</h1>
+
+        <p>You couldn't escape in time.</p>
+
+        <button onclick="location.reload()">
+            TRY AGAIN
+        </button>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
